@@ -6,21 +6,17 @@ import { images } from '../../constants';
 import './Header.scss';
 
 const scaleVariants = {
-  whileInView: {
-    scale: [0, 1],
-    opacity: [0, 1],
-    transition: {
-      duration: 2,
-      ease: 'easeInOut',
-    },
-  },
+  whileInView: { 
+    scale: [0, 1], 
+    transition: { duration: 2, ease: 'easeInOut' } },
 };
 
 const Header = () => (
   <div className="app__header app__flex">
     <motion.div
-      whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-      transition={{ duration: 2 }}
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1.75, delay: 0.5 }}
       className="app__header-info"
     >
       <div className="app__header-badge">
@@ -41,8 +37,9 @@ const Header = () => (
     </motion.div>
 
     <motion.div
-      whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 1.5, delayChildren: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5, delay: 1 }}
       className="app__header-img"
     >
       <img src={images.profile} alt="profile_bg" />
@@ -57,7 +54,8 @@ const Header = () => (
 
     <motion.div
       variants={scaleVariants}
-      whileInView={scaleVariants.whileInView}
+      initial="hidden"
+      animate="whileInView"
       className="app__header-circles"
     >
       {[images.react, images.python, images.kotlin].map((circle, index) => (
