@@ -53,9 +53,8 @@ const Header = () => (
 
     <motion.div
       variants={scaleVariants}
-      whileInView={{ scale: [0,1] }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 2, delay: 1 }}
       className="app__header-circles"
     >
