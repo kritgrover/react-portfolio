@@ -39,12 +39,11 @@ const Header = () => (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.5, delay: 1 }}
+      transition={{ duration: 1.5, delay: 0.5 }}
       className="app__header-img"
     >
       <img src={images.profile} alt="profile_bg" />
       <motion.img
-        whileInView={{ scale: [0, 1] }}
         transition={{ duration: 2, ease: 'easeInOut' }}
         src={images.circle}
         alt="profile_circle"
@@ -54,8 +53,10 @@ const Header = () => (
 
     <motion.div
       variants={scaleVariants}
-      initial="hidden"
-      animate="whileInView"
+      whileInView={{ scale: [0,1] }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2, delay: 1 }}
       className="app__header-circles"
     >
       {[images.react, images.python, images.kotlin].map((circle, index) => (
