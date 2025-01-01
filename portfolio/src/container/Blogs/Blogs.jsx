@@ -10,9 +10,14 @@ const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
   const [brands, setBrands] = useState([]);
+  const [animationState, setAnimationState] = useState({ opacity: 1 });
 
   const handleClick = (index) => {
-    setCurrentIndex(index);
+    setAnimationState({ x: -15, opacity: 0 });
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setAnimationState({ x: 0, opacity: 1 });
+    }, 800);
   };
 
   useEffect(() => {
@@ -37,12 +42,21 @@ const Testimonial = () => {
       {testimonials.length && (
         <>
           <div className="app__testimonial-item app__flex">
-            <img
-              src={urlFor(testimonials[currentIndex].imgurl)}
-              alt={testimonials[currentIndex].name}
-            />
+            <motion.div
+              animate={animationState}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <img
+                src={urlFor(testimonials[currentIndex].imgurl)}
+                alt={testimonials[currentIndex].name}
+              />
+            </motion.div>
+
             <div className="app__testimonial-content">
-              <div>
+              <motion.div
+                animate={animationState}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
                 <h5 className="p-text">
                   <a
@@ -53,8 +67,8 @@ const Testimonial = () => {
                     Link to Full Article
                   </a>
                 </h5>
-              </div>
-              <p className="p-text">{testimonials[currentIndex].feedback}</p>
+                <p className="p-text">{testimonials[currentIndex].feedback}</p>
+              </motion.div>
             </div>
           </div>
 
