@@ -1,0 +1,54 @@
+.app__interest {
+  width: 100%;
+  flex-direction: column;
+}
+
+.interest_container {
+  width: 100%;
+  flex-direction: row;
+  padding: 2rem;
+  justify-content: space-between;
+}
+
+.app__playlist {
+  width: 40%;
+  text-align: center;
+}
+
+.app__interest-list {
+  width: 55%;
+  margin-top: 1rem;
+  margin-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+
+  transition: all 0.3s ease-in-out;
+
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+  }
+}
+
+.app__interest-item {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  max-width: 1500px;
+  border-radius: 15px;
+  background-color: var(--white-color);
+  margin-top: 2rem;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    margin-right: 2rem;
+  }
+}
