@@ -28,6 +28,7 @@
     border-radius: 10px;
     cursor: pointer;
     background-color: #fef4f5;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 
     transition: all 0.3s ease-in-out;
 
@@ -65,6 +66,7 @@
 
 .app__footer-cards .app__footer-card:last-child {
   background-color: #fff;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 .app__footer-cards .app__footer-card:last-child:hover {
@@ -95,6 +97,7 @@
       border: none;
       border-radius: 7px;
       background-color: #fff;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 
       font-family: var(--font-base);
       color: var(--secondary-color);

@@ -24,14 +24,6 @@
   padding: 1rem;
   border-radius: 15px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-
-  transition: all 0.3s ease-in-out;
-
-  img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10%;
-  }
 }
 
 .app__interest-item {
@@ -40,10 +32,9 @@
   width: 20%;
   max-width: 1500px;
   border-radius: 15px;
-  background-color: var(--white-color);
+  background-color: #000;
   margin-top: 2rem;
   align-items: center;
-  transition: all 0.3s ease-in-out;
 
   img {
     width: 200px;
